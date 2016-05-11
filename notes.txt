@@ -1,0 +1,68 @@
+--- KEY TERMS ---
+
+Return: Gain/Loss of a security during a period, consists of income + capital gains on an investment, usually in percentage.
+
+Risk: The chance that an investment's return will be different from expected, includes the possibility to lose the original investment. Measured by standard deviation of historical returns or average return of specific investment.
+
+Arbitrage: A simultaneous buy and sell of asset to profit from difference in price, price differences of identical instruments, on different markets, or different forms.
+
+--- Portfolio manager ---
+
+Expense ratio: usually less then 1%
+Two and twenty: 2% of assets under management + 20% of returns
+
+--- Investors ---
+
+Individuals
+Institutions (Foundations etc.)
+Funds of Funds (Other hedge funds etc.)
+
+Must have a track record, or very compelling strategy and "back test" (simulations), fit in a "pigeon hole".
+
+Types of fund goals (Benchmark fund vs. absolute return fund): Reference to a benchmark by comparing with other funds (pigeon hole), absolute return (lower risk, always positive etc.).
+
+--- Benchmark ---
+
+Eg. Dow Jones Index compared to specific fund over time.
+
+--- Common metrics ---
+
+Annual return: How much is the money making each year?
+Risk: Standard deviation of return, as mentioned above, volatility, draw down (lower is better).
+Reward/Risk: Sharpe Ratio (reward divided by risk), Sortino Ratio, Jensen's alpha.
+
+--- Annual return example --- 
+
+(value[end] / value[start]) - 1
+(100 / 110) - 1 = 0.10 = 10%
+
+--- Standard deviation of daily return ---
+
+i -> day
+
+daily_rets[i] = (value[i] / value[i - 1]) - 1
+std_metric = stdev(daily_rets)
+
+--- Max draw down ---
+
+Difference between local max and low over time.
+
+--- Compare similar portfolios ---
+
+Sharpe ratio: Most important measure of asset performance, calculate compensation for risk, the higher ratio the better (more return same risk).
+
+i -> day
+k -> sqrt(250) for daily returns (250 is equal to the number of days in a trading year, 12 for monthly returns)
+
+daily_rets[i] = (value[i] / value[i - 1]) - 1
+metric = k * mean(daily_rets) / stdev(daily_rets)
+
+--- Sharpe ratio example ---
+
+mean(daily return) = 0.005
+stdev(daily) = 0.04
+
+sqrt(250) * 0.005 / 0.04 = 1.97...
+
+
+
