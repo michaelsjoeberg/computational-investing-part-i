@@ -1,0 +1,67 @@
+About this Course
+Why do the prices of some companies’ stocks seem to move up and down together while others move separately? What does portfolio “diversification” really mean and how important is it? What should the price of a stock be? How can we discover and exploit the relationships between equity prices automatically? We’ll examine these questions, and others, from a computational point of view. You will learn many of the principles and algorithms that hedge funds and investment professionals use to maximize return and reduce risk in equity portfolios.
+Instructors
+
+Dr. Tucker Balch
+Associate Professor
+School of Interactive Computing
+
+Syllabus
+Week 1
+Portfolio Management and Market Mechanics
+	.	Course Overview
+	.	Portfolio Management
+	.	Market Mechanics
+	.	Interview with Paul Jiganti
+	.	Review
+	.	Quiz: Portfolio Management and Market Mechanics
+Week 2
+Company Worth, Capital Assets Pricing Model and QSTK Software Overview
+	.	What is a Company Worth?
+	.	Capital Assets Pricing Model
+	.	Installing QSTK Software
+	.	Review
+	.	Quiz: Install QSTK
+Week 3
+Manipulating Data in Python and QSTK
+	.	Manipulating Data in Python with Numpy
+	.	Manipulating Data in QSTK
+	.	Interview with Tom Sosnoff
+	.	Quiz Preparation: Analyze and Optimize a Portfolio
+	.	Review
+	.	Quiz: Assess and Optimize a Portfolio
+Week 4
+Efficient Markets Hypothesis and Event Studies, Portfolio Optimization and the Efficient Frontier
+	.	Efficient Markets Hypothesis
+	.	Event Studies
+	.	Portfolio Optimization and the Efficient Frontier
+	.	The Efficient Frontier
+	.	Quiz Preparation
+	.	Review
+	.	Quiz: Event Studies
+Week 5
+Digging into Data
+	.	Digging into Data
+	.	Quiz Preparation
+	.	Review
+	.	Quiz: Build a Market Simulator
+Week 6
+The Fundamental Law, CAPM for Portfolios
+	.	The Fundamental Law
+	.	CAPM for Portfolios: Managing Market Risk
+	.	Quiz Preparation
+	.	Review
+	.	Quiz: Event Study into Simulator
+Week 7
+Information Feeds and Technical Analysis
+	.	Information Feeds and Technical Analysis, Part 1
+	.	Information Feeds and Technical Analysis, Part 2
+	.	Review
+	.	Quiz: Implement Bollinger Bands
+Week 8
+Jensen's Alpha, Back Testing and Machine Learning
+	.	Jensen's Alpha and Back Testing
+	.	Brief Introduction to Machine Learning
+	.	Review
+	.	Quiz: Event Study with Bollinger Bands
+	.	Quiz: Bollinger Band-based trading
