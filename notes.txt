@@ -113,7 +113,12 @@ Net profit USD 100
 
 High risk.
 
+--- Market mechanics (hedge funds) ---
 
+Order book observations: Short when more sell than buy, buy when more buy than sell.
 
+Arbitrage: Buy and Sell same stock on different exchanges (NASDAQ/NYSE).
+
+Speed is vital.
 
 
