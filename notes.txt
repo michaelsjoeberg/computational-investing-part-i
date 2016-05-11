@@ -64,5 +64,56 @@ stdev(daily) = 0.04
 
 sqrt(250) * 0.005 / 0.04 = 1.97...
 
+--- Types of orders ---
+
+Req information:
+Symbol
+Buy, Sell
+Market, Limit
+Shares
+Price (if Limit)
+
+Example: Order = IBM,BUY,MARKET,100 -> Broker -> Exchange
+
+--- The Order Book ---
+
+Example:
+Ask USD 100.10 100
+Ask USD 100.05 500
+Ask USD 100.00 1000
+Bid USD  99.95 100
+Bid USD  99.90 50
+Bid USD  99.85 50
+
+Spread: Difference in order book ask/bid quantity.
+
+Crossing the spread: Increase/Lower price to meet asking/bid price for share.
+
+Market order: Buy/Sell a specific amount of shares for lowest price available.
+
+Sell short (to open): Bet against a stock.
+
+--- Short selling ---
+
+Borrow the shares -> Sell them = Cash asset, owed shares liability
+
+Example:
+
+- Borrow 100 shares
+- Sell 100 shares on the market
+Asset USD 10,000
+Liability 100 shares
+
+- Buy 100 shares for USD 9900
+- Give back 100 shares
+Asset USD 100
+Liability 0
+
+Net profit USD 100
+
+High risk.
+
+
+
 
 
