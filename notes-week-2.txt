@@ -41,6 +41,21 @@ Present value is equal to USD 20, if dividend is USD 1 every year, forever.
 
 Good/bad news about single CEO makes share price rise/drop, good/bad new about sector makes all shares (locally, region) rise/drop.
 
+--- Company worth ---
+
+Value is sum of book value (assets etc.) and intrinsic value (future returns).
+
+Future returns:
+i = dividend return
+SUM(discount_rate^i)
+
+Book value:
+Total assets - Intangible assets - Liabilities
+
+Market is an efficient news processor (Efficient Market Hypothesis).
+
+Market value (Market Cap) = num_shares_outstanding * price
+
 
 
 
