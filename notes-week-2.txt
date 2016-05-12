@@ -56,6 +56,28 @@ Market is an efficient news processor (Efficient Market Hypothesis).
 
 Market value (Market Cap) = num_shares_outstanding * price
 
+--- CAPM ---
+
+Index investing: better to invest in a market portfolio than specific stocks.
+
+Assumptions:
+Systematic (market) and residual component of return.
+
+Market portfolio (index): S&P 500 (US), FTA (UK), DJ 30, TOPIX (Japan).
+
+Metrics:
+
+Using linear regression (for scatter chart) to find beta and alpha.
+
+daily return = r
+Beta = slope of linear regression
+Alpa -> information about stock to exploit = y-intercept of linear regression (usually positive if better then market)
+
+Example: 
+r_stock = beta_stock * r_market + alpha_stock
+
+Beta (slope of line) and Correlation (scatter of points) are different.
+
 
 
 
