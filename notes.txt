@@ -131,4 +131,11 @@ Speed is vital.
 
 Information feed: T.R. feed packages, analyst estimates (models).
 
+--- Interview with Paul Jiganti ---
+
+Dark pools: A private forum from large transactions, to avoid impacting the market.
+
+Market orders and pre-opening orders set the opening price for a stock.
+
+
 
