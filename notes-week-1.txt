@@ -137,5 +137,7 @@ Dark pools: A private forum from large transactions, to avoid impacting the mark
 
 Market orders and pre-opening orders set the opening price for a stock.
 
+------------------
 
+QUIZ PASSED
 
