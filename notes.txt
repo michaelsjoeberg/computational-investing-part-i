@@ -121,4 +121,14 @@ Arbitrage: Buy and Sell same stock on different exchanges (NASDAQ/NYSE).
 
 Speed is vital.
 
+--- Inside a Quant Shop ---
+
+"Fat finger": Sold a lot of shares in one trade, compared to over a couple of trades/ days. Usually makes the shares drop in price.
+
+"Portfolio optimizer" algorithm: Inputs current portfolio, N-day forecast, historical prices and risk constrains for target portfolio.
+
+"N-day forecast": Inputs infromation feed, historical prices, and a forecast algorithm (machine learning) to make a forecast.
+
+Information feed: T.R. feed packages, analyst estimates (models).
+
 
