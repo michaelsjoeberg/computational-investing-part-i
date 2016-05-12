@@ -78,6 +78,44 @@ r_stock = beta_stock * r_market + alpha_stock
 
 Beta (slope of line) and Correlation (scatter of points) are different.
 
+--- How hedge funds use CAPM ---
 
+Expected excess returns are proportional to beta.
+
+> Beta -> > Risk
+
+Beta of portfolio = weighted sum of all betas
+
+r_portfolio = SUM(w_stock * r_stock)
+
+Example(weight): 
+
+XOM USD 1000 = beta 1.0
+IBM USD 1000 = beta 2.0
+
+w_stock = 0.5 * 1.0 + 0.5 * 2.0 = 1.5
+
+--- Market risk example ---
+
+Information IBM -> rise (forecast)
+Market is going down.
+Difference in price points is alpha.
+
+Long position in IBM.
+Short the market (SPY in example).
+
+1 = IBM (beta 1.0)
+2 = SPY (beta 1.0)
+
+w_1 = 0.5
+w_2 = -0.5
+
+r_1 = w_1 * beta + alpha(0) = 0.5 + 0.5*alpha (weighted alpha)
+r_2 = w_2 * beta + alpha(0) = -0.5 + 0
+
+Total return (long IBM and short market): 
+r_1 + r_2 = 0.5*alpha
+
+Short market to remove risk.
 
 
