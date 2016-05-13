@@ -118,4 +118,9 @@ r_1 + r_2 = 0.5*alpha
 
 Short market to remove risk.
 
+---------
+
+Install QSTK on Ubuntu.
+
+QUIZ PASSED
 
