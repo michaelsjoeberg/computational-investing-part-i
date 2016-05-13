@@ -38,6 +38,18 @@ plt.plot(ldt_timestamps,na_price) # plot
 plt.legend(ls_symbols) # add legend
 plt.ylabel('Adjusted Close') # add y-label
 plt.xlabel('Date') # add x-label
-plt.savefig('adjustedclose.pdf', format='pdf') # save as pdf
+# plt.savefig('adjustedclose.pdf', format='pdf') # save as pdf
 
+# normalizing prices
+print na_price[0,:] # index price
+
+na_normalized_price = na_price / na_price[0,:]
+print na_normalized_price
+
+plt.clf() # clear plot
+plt.plot(ldt_timestamps,na_normalized_price) # plot
+plt.legend(ls_symbols) # add legend
+plt.ylabel('Adjusted Close') # add y-label
+plt.xlabel('Date') # add x-label
+plt.savefig('normalized.pdf', format='pdf') # save as pdf
 
