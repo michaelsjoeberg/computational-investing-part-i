@@ -1,0 +1,27 @@
+--- Two general approaches for determining value ---
+
+1 Technical analysis:
+Price and volume only
+
+2 Fundamental analysis: 
+Financial statements
+P/E ratios, cash on hand, dividends
+
+--- Where does information come from? ---
+
+Price/Volume: the markets
+Fundamentals: SEC filings
+News: exogenous sources
+
+--- Efficient market hypothesis ---
+
+3 versions:
+Weak, semi-strong, strong
+
+Weak: prices reflect all past publicly available information (no profit from technical analysis)
+Semi-strong: Weak + prices instantly change to reflect new public information (no profit from technical analysis and fundamental analysis)
+Strong: Semi-strong + prices instantly reflect hidden informaton (no profit from insider information)
+
+Not always true, fundamental analysis is correlated with future prices for example.
+
+
