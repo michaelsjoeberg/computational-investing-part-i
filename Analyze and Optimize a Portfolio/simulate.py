@@ -95,7 +95,7 @@ if __name__ == '__main__':
     # set input variables
     startdate = dt.datetime(2010, 1, 1)
     enddate = dt.datetime(2010, 12, 31)
-    symbols = ['AXP', 'HPQ', 'IBM', 'HNZ']
+    symbols = ['C', 'GS', 'IBM', 'HNZ']
 
     # initiate function
     simulate(startdate, enddate, symbols)
