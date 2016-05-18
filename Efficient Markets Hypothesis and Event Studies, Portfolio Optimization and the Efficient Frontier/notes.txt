@@ -24,4 +24,59 @@ Strong: Semi-strong + prices instantly reflect hidden informaton (no profit from
 
 Not always true, fundamental analysis is correlated with future prices for example.
 
+--- Portfolio optimization ---
+
+Given: A set of equities and target return
+Find: Allocation to each equity that minimizes risk
+
+Where 'risk' is volatility (standard deviation), but also amount of draw down.
+
+Consider equites in two dimensions (risk, return) and aim for a portfolio with same, or higher, return with lower risk.
+
+Balance based on 'sharpe ratio', reward / standard deviation of return (risk).
+
+Harry Markowitz got noble price (quantitative finance) for the discovery.
+
+--- Portfolio optimizer program ---
+
+Inputs: Expected return for each equity, volatility (risk) for each equity, target return, 'covariance matrix'.
+Outputs: Portfolio weights that minimize risk for target return.
+
+--- Correlation and Covariance ---
+
+Correlation coefficient:
+	Number between -1 and 1
+	High correlation between stocks (move together) is closer to 1.
+	Negative correlation between stocks (move opposite) is closer to -1.
+	No correlation (random) is closer to 0.
+
+Leverage anti-correlation between stocks to reduce volatility of portfolio (smooth curve), i.e. lower risk by combining  anti-correlation equites.
+
+--- Efficient frontier ---
+
+Optimal portfolio curve (efficient frontier):
+	Lowest risk (many equities)
+	Higest risk (one equity)
+	Maximum sharpe ratio in middle
+
+--- QSTK optimizer ---
+
+Tutorial 8 for coding examples.
+
+General purpose optimizer:
+	Define variables (equity weights)
+	Define constrains (min/max weights)
+	Define criteria (function of weights)
+
+Optimizer algorithm: tweak weights, check constrains, call function, repeat.
+
+Further reading: Convex function and convex optimization.
+
+
+
+
+
+
+
+
 
