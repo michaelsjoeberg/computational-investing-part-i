@@ -36,7 +36,7 @@ def find_events(ls_symbols, d_data):
             f_symreturn_today = (f_symprice_today / f_symprice_yest) - 1
             f_marketreturn_today = (f_marketprice_today / f_marketprice_yest) - 1
 
-            if (f_symprice_today < 5.0) and (f_symprice_yest >= 5.0):
+            if (f_symprice_today < 10.0) and (f_symprice_yest >= 10.0):
                 df_events[s_sym].ix[ldt_timestamps[i]] = 1
 
     return df_events
@@ -63,4 +63,5 @@ if __name__ == '__main__':
     df_events = find_events(ls_symbols, d_data)
 
     print "Creating Study"
-    ep.eventprofiler(df_events, d_data, i_lookback=20, i_lookforward=20, s_filename='MyEventStudy.pdf', b_market_neutral=True, b_errorbars=True, s_market_sym='SPY')
+    ep.eventprofiler(df_events, d_data, i_lookback=20, i_lookforward=20,
+                        s_filename='10-2012.pdf', b_market_neutral=True, b_errorbars=True, s_market_sym='SPY')
