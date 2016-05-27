@@ -1,0 +1,74 @@
+--- Events ---
+
+Bollinger bands: 
+	Measure extreme price changes using moving averages and standard deviations.
+
+Events: 
+	Stock is doing something else than market in general.
+
+More events -> more reliable results.
+
+How to use it?
+
+1. Create several random portfolios, measure performance, average results, to get a baseline.
+
+2. Devise a strategy to beat the random portfolio.
+
+--- Actual vs Adjusted prices ---
+
+Actual:
+	The actual closing price as recorded by the exchange.
+
+Adjusted:
+	A revised price that accounts for "how much someone made by holding the stock", eg. dividends and splits, to keep track over time.
+
+--- Adjusting for splits example ---
+	
+Start value: 100 * 50 = 500 USD
+
+	1. Actual price (100 shares) increase from 50 USD to 100 USD.
+	2. Actual price (100 shares) splits into 1:2 (200 shares), drops from 100 USD to 50 USD.
+	3. Actual price (200 shares) increase from 50 USD to 100 USD.
+	4. Actual price (200 shares) splits into 1:4 (400 shares), drops from 100 USD to 50 USD.
+
+End value: 400 * 50 = 2000 USD
+
+Actual price dropped at least 2 over time, adjusted prices increased over time.
+
+--- Adjusting for dividends example ---
+
+Start value (before dividend): x + 1 USD (expected dividend)
+	
+	1. Stock x increases by 1 USD over a time period.
+	2. On dividend day (money from company goes to sharholders), actual prices drops 1 USD to account for less capital in bank, adjusted prices stays the same.
+
+End value (after dividend): x (adjusted price, incl. price increase for period)
+
+--- Gaps in data (NaN) ---
+
+Breaks in trading, before stocks exists, after stocks exists etc.
+
+Fill back: fill NaN backwards using newer data.
+
+Fill forward: fill NaN forwards using older data.
+
+Error in data (bad data) may cause calculation errors, ie wrong factors or using bad fillers.
+
+Examples of bad data:
+	
+	- Failure to adjust for splits.
+	- Orders of magnitude drops, followed by magnitude climbs.
+	- Database updates missing significant chunks of data/ symbols.
+
+Bad data may cause automated systems to exploit the bad data and fail real data, it may "discover" something it shouldn't have.
+
+--- Sanity checks for Data Mining ---
+
+- Scan new data for large drops (50%) and gains (200%), usually associated with splits.
+- NaNs in DOW stocks.
+- Recent adjusted prices less than 0.01.
+- NaNs > trading days.
+
+Scrubbing data:
+	Remove data for reliability.
+	Repair data with multiple sources.
