@@ -43,6 +43,8 @@ if __name__ == '__main__':
 	# read orders file
 	ls_symbols, ls_dates = read_file(file_orders)
 
+	ls_dates.sort()
+
 	# set start and end date for trades
 	dt_start = ls_dates[0]
 	dt_end = ls_dates[-1] + dt.timedelta(days=1)
@@ -66,6 +68,7 @@ if __name__ == '__main__':
 					}
 
 	trade_matrix = pd.DataFrame(trade_matrix, index=ls_dates)
+	#print trade_matrix
 
 	# allocations of stocks
 	allocations = {ls_symbols[0] : 0.0,
@@ -76,33 +79,47 @@ if __name__ == '__main__':
 
 	allocations = pd.DataFrame(allocations, index=ls_dates)
 
-	# total cash
-	total_cash = int(starting_cash)
-
 	# read csv file again
 	reader = csv.reader(open(file_orders, 'rU'), delimiter=',')
 	for row in reader:
 
 		# set date for trade
-		date = dt.datetime(int(row[0]), int(row[1]), int(row[2]))
-		timestamp = du.getNYSEdays(date, date + dt.timedelta(days=1) , dt.timedelta(hours=16))
+		order_date = dt.datetime(int(row[0]), int(row[1]), int(row[2]))
+		order_timestamp = du.getNYSEdays(order_date, order_date + dt.timedelta(days=1), dt.timedelta(hours=16))
+		timestamp = order_timestamp[0]
 
 		# set price for traded stock
-		temp_data = dataobj.get_data(timestamp, [row[3]], ['close'])
+		temp_data = dataobj.get_data(order_timestamp, [row[3]], ['close'])
 		price_data = dict(zip(['close'], temp_data))
 		price = price_data['close'].values
 		price = int(price[0])
 
 		if (row[4] == "Buy"):
-			allocations[row[3]] = allocations[row[3]] + int(row[5])
-			trade_matrix.set_value(date, row[3], trade_matrix.get_value(date, row[3]) + int(row[5]))
-			total_cash = total_cash - (int(row[5]) * price)
+			#allocations[row[3]] = allocations[row[3]] + int(row[5])
+			trade_matrix.set_value(order_date, row[3], trade_matrix.get_value(order_date, row[3]) + int(row[5]))
+			#total_cash = total_cash - (int(row[5]) * price)
 
 		elif (row[4] == "Sell"):
-			allocations[row[3]] = allocations[row[3]] - int(row[5])
-			trade_matrix.set_value(date, row[3], trade_matrix.get_value(date, row[3]) - int(row[5]))
-			total_cash = total_cash + (int(row[5]) * price)
+			#allocations[row[3]] = allocations[row[3]] - int(row[5])
+			trade_matrix.set_value(order_date, row[3], trade_matrix.get_value(order_date, row[3]) - int(row[5]))
+			#total_cash = total_cash + (int(row[5]) * price)
 
+	# total cash
+	total_cash = int(starting_cash)
 
-	print na_price["2011-02-02"]
-	print allocations["2011-02-02"]
+	# cash per day
+	cash_matrix = pd.DataFrame(np.zeros(len(ldt_timestamps)), index=ldt_timestamps)
+	#print cash_matrix
+
+	cash_matrix.set_value(dt_start, 0, total_cash)
+
+	trade_matrix.sort_index(inplace=True)
+	cash_matrix.sort_index(inplace=True)
+
+	for date in ldt_timestamps:
+		date_timestamp = du.getNYSEdays(date, date + dt.timedelta(days=1), dt.timedelta(hours=16))
+		timestamp = str(date_timestamp[0])
+
+	#print allocations
+	print trade_matrix
+	#print cash_matrix
