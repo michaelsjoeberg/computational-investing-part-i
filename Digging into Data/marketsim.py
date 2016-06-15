@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
 	starting_cash = "1000000"
 	file_orders = "orders.csv"
-	file_value = "values.csv"
+	file_value = "values-short.csv"
 
 	# read orders file
 	ls_symbols, ls_dates = read_file(file_orders)
