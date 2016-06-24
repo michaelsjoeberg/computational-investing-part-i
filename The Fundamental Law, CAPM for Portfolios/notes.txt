@@ -1,0 +1,179 @@
+--- Thought Experiment: Coin flipping ---
+
+Key Objectives:
+	- information ratio (IR)
+	- information coefficient (IC)
+	- strategy breadth (BR)
+	- Fundamental Law
+
+Stock trade = Bet
+Coin flip = Bet
+
+Uncertainty = Beta
+Coin bias = Alpha
+	51% heads
+
+--- Conditions of One Bet ---
+
+We bet one token
+
+Win: Now own two tokens
+Lose: Now own zero tokens
+
+Case 1: One bet with a USD 1000 token
+	0.51 * 1000 + 0.49 * -1000 = USD 20
+
+Case 2: 1000 bets with a USD 1 token
+	1000 * (0.51 * 1 + 0.49 * -1) = USD 20
+
+--- Consider reward/risk (sharpe ratio) ---
+
+Risk measure 1: possibility to lose everything
+
+Case 1: 49%
+Case 2: 0.49^1000 (small!)
+
+Risk measure 2: standard deviation
+
+Case 1: STDEV(1000, 0, 0, 0, ..., 0) = USD 31.62
+	USD 20 / USD 31.62 = 0.63
+
+Case 2: STDEV(1, -1, 1, -1, 1, 1, ..., -1) = USD 1.00
+	USD 20 / USD 1 = 20.0
+
+SR(case 2) = SR(case 1) * SQRT(1000)
+	20 = 0.63 * SQRT(1000) = 0.63 * 31.62 = 20
+
+Same expected return, but multiple bets has lower risk, lower stdev, and higher reward/risk ratio.
+
+Generally:
+	SR(multi) = C * alpha * SQRT(bets)
+
+	Higher alpha = higher Sharpe Ratio
+	More bets = higher Sharpe Ratio
+	Sharpe Ratio grows as the SQRT of breadth
+
+--- Observation ---
+
+Jim Simons (rentec) and Warren Buffet (BRK) offer the same performance
+
+Buffet's portfolio contains few equities:
+	54% in just 3 stocks (2010)
+
+Simons trades actively (100ks/day)
+
+--- Fundamental Law of Active Portfolio Management ---
+
+IR (information ratio) = mean(alpha) / stdev(alpha)
+
+IC (information coefficient) = correlation of forecast to actual return
+
+Breadth (BR) = number of opportunities to execute
+
+Fundamental law: IR = IC * SQRT(BR)
+
+Fundamental (think, reasearch, invest a lot of time) doesn't scale.
+
+Computational (gather, analyse, compute) scale.
+
+--- Fundamental law example ---
+
+Example Reward/Risk (sharpe) = 3.0
+
+Fundamental approach:
+	IR = IC * SQRT(trades)
+	3.0 = skill * SQRT(trades)
+	skill = 0.27
+
+Computational approach:
+	Assuming 1/100 skill = 0.27 / 100 = 0.0027
+
+	IR = IC * SQRT(trades)
+	3.0 = 0.0027 * SQRT(trades)
+	trades = (3.0 / 0.0027)^2 -> approx. 10,000 times more than fundamental
+
+Conclusion:
+	Fundamnetal -> great skill, few trades
+	Computational -> less skill, many opportunities
+
+	Two ways to succeed -> Skill and Breath
+
+--- CAPM (Capital Assets Pricing Model) Recap ---
+
+Key Objectives:
+	- recap and add to CAPM toolset
+	- understand CAPM for portfolios
+	- understand portfolio beta and portfolio alpha
+	- learn how to manage risk
+
+CAPM for individual stock:
+	Return = Beta (market) + Alpha (skill and random)
+
+Extend to portfolios:
+	h(stock) = percentage holdings in stock
+	return(portfolio) = sum( h(stock) * r(stocks) )
+
+Example:
+	h(1) = 0.25
+	h(2) = 0.75
+
+	Beta(1) = 3.0
+	Beta(2) = 1.0
+
+	r(portfolio) = h(1) * (Beta(1)(r(market) + alpha(1))) + h(2) * (Beta(2)(r(market) + alpha(2)))
+
+	-> 1.5r(market) + 0.25alpha(1) + 0.75alpha(2)
+
+	market is impossible to control
+	alpha can be controlled
+
+--- Removing market risk ---
+
+Beta -> volatility to market
+
+Stock 1:
+	Will go down relative to market
+	Has a Beta of 2.0
+
+Stock 2:
+	Will go up relative to market
+	Has a Beta of 1.0
+
+Plan:
+	-50% Stock 1 (short)
+	+50% Stock 2 (long)
+
+r(portfolio) = Beta * r(market) + Alpha(portfolio)
+
+stdev(Beta(portfolio) * r(market)) -> market risk
+stdev(Alpha(portfolio)) -> residual risk
+
+--- Example for removing market risk using CAPM ---
+
+Find weightings (h from previous example) to zero portfolio Beta
+
+Holdings:
+	h(1) = -0.33
+	h(2) = 0.66
+
+Beta:
+	B(1) = 2.0
+	B(2) = 1.0
+
+Beta total:
+	B(portfolio) = -0.33 * 2.0 + 0.66 * 1.0 = 0
+
+Return:
+	r(portfolio) = 0 + -0.33alpha(1) + 0.66alpha(2)
+
+Conclusion:
+	- Can reduce market risk by zeroing out Beta
+	- This is core concept for hedge funds
+	- Portfolio optimizers do this
+
+--- Recap of Four Homeworks ---
+
+Excel, build portfolio
+Event Study
+Market simulator
+Generate trades
