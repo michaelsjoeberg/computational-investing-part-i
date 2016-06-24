@@ -1,0 +1,64 @@
+--- Examples of Information Feeds ---
+
+Services:
+	- Thomson Reuters Machine Readable News
+	- StarMine
+	- Insider Insights
+
+What to look for:
+	- Historical data to back test
+	- Survivor bias free
+	- Ease of integration with sys
+	- Low latecy (important)
+
+--- Thomson Reuters ---
+
+News feed:
+	Connection at exchanges
+	Servers in NYC, London, Chicago, DC
+
+--- StarMine ---
+
+Analyst assessment:
+	Daily feed each evening
+	Updates include analyst revisions
+
+--- Insider Insights ---
+
+Insider information:
+	Daily feed each evening
+	Derived from public filings
+	Value added by assessing importance of buying or selling
+
+--- Technical Analysis ---
+
+	- Computing indicators based on historical data and volume only
+	- Indicators are calculated from recent prices and volume to predict future price movements
+	- Indicators are "heuristics"
+
+Controversial subject:
+	Many don't believe in the value of TA
+	Depends on information in historical price and volume
+	Leverages psychology of the investor and market physics
+
+Three "Branches":
+	1. Sentiment Indicators -> emotions of investors
+	2. Flow-of-Funds Indicators -> amount of cash going in or out, market capacity to buy or sell
+	3. Market Structure Indicators -> most indicators fall in this group
+
+Underlying Value:
+	- Assumption is that there is a true underlying value for the asset
+	- Emotions and market structure cause price to deviate
+	- If we can estimate the underlying value, we can find arbitrage opportunities
+
+Examples:
+	- SMA (Simple Moving Average)
+	- MACD (Moving Averages Convergence Divergence)
+	- BOLL (Bollinger Bands)
+
+Convert to Standard Units:
+	- Usually -1.0 to +1.0
+	- More convenient for defining event and for Machine Learning
+
+
+
