@@ -1,0 +1,102 @@
+--- Jensen's Alpha ---
+
+First used as a measure in the evaluation of mutual fund managers by Michael Jensen in 1968.
+
+Idea: Measure should adapt to volatility of the stock price.
+
+Formal statement of CAPM:
+	E(R_i) = R_f + B_i(E(R_m) - R_f)
+
+	E() = "expected"
+	R_i = return on investment
+	R_m = market return
+	R_f = risk free rate
+	B_i = beta of the asset or portfolio
+
+ Move from "expected" to "actual":
+ 	R_i = R_f + R_i * (R_m - R_f) + A
+
+ 	A = alpha
+
+ 	CAPM -> E(A) = 0
+ 	Others -> A is measure of management skill
+
+ --- Back Testing ---
+
+Testing trading strategy on prior time periods.
+
+Simulation:
+	- Roll back to an earlier point in time
+	- Present current information to the strategy, no "peeking" into the future
+	- Ask strategy what you would do
+	- Accept orders and simulate their execution
+	- Track portfolio value
+	- Step forward and repeat
+
+Risks:
+	- The market is different now than during the test period, performance may not persist.
+	- Test strategy may be "lucky" in the past, data mining fallacy.
+	- Over fitting, strategy is tuned for historical data and not underlying principle.
+
+Cross validation:
+	Test strategy on a limited set of stocks, then test on a different set of stocks (and/or time period).
+
+--- Main components of back tester ---
+
+Historical data (as a feed to the strategy:
+	- Complete, broad, and survivor-bias free
+
+Strategy definition (generates orders based on current information):
+	- Ease of use in defining strategies
+
+Market simulator (executes orders):
+	- Accurate simulation of transaction costs, including commissions and market impact
+
+Analysis engine (assesses quantitative performance of the result):
+	- Complete coverage of important metrics including comparisons with benchmark
+
+--- Market as "Big Data" ---
+
+13,000 securities trading in America
+120 technical and fundamental factors
+252 trading days per year
+
+= 1.96 Billion data points in 5 years
+
+--- Machine Learning ---
+
+Definition:
+	"The construct and study of systems that can learn from data."
+
+Major uses:
+	- Classification
+	- Regression (numerical prediction)
+
+DATA -> MACHINE LEARNING -> [Observation -> MODEL -> Prediction]
+
+Parametric models:
+	- Linear (y = mx + b)
+	- Polynomial (y = m_1x^2 + m_2x + b)
+
+Data-Driven models:
+	Find values in range of query (for example as mean of historical data)
+
+Pros for each model:
+	- Parametric don't usually over fit, very fast at run times
+	- Data-Driven can model complex data well and easily adapts to more data
+
+Cons for each model:
+	- Parametric don't model complex non-linear data well, sometimes over simplify
+	- Data-Driven is sometimes slow at run time and over fits
+
+2D Data-Driven model:
+	Two dimension variables and use values close to query as mean as prediction for query value (K nearest neighbor).
+
+--- Machine Learning in Trading and Investing ---
+
+Weather:
+	Barometric pressure and Humidity -> Rain
+
+Stocks:
+	P/E Ratio and News -> Future Price
+
