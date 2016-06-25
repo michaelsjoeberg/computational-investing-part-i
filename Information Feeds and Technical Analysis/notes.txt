@@ -60,5 +60,29 @@ Convert to Standard Units:
 	- Usually -1.0 to +1.0
 	- More convenient for defining event and for Machine Learning
 
+--- Bollinger Bands ---
+
+Actual price, rolling mean, upper band (sell  signal), and lower band (buy signal)
+
+Upper band: 10 days rolling mean + standard deviation
+Lower band: 10 days rolling mean - standard deviation
+
+Developed by John Bollinger
+
+Idea: Indicator should adapt to volatility of the stock price
+
+--- Compute Bollinger Bands ---
+
+	- Read in historical closing prices
+	- mid = "rolling" mean over look-back period
+	- std = "rolling" stdev over look-back period
+	- upper = min + std
+	- lower = mid - std
+
+Current "value" of Bollinger:
+	If current price at Upper band = 1.0
+	If current price at Lower band = -1.0
+
+Val = (price - mid/std)
 
 
